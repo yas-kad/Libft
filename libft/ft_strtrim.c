@@ -6,13 +6,13 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 20:17:10 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 16:19:14 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/10/31 18:48:40 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isspace_end(const char *c1, const char *set2)
+int		isspace_end(const char *c1, const char *set2)
 {
 	int		j;
 	int		len_c1;

@@ -6,15 +6,16 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:34:18 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:37:34 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:28:16 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
 
 void		ft_putchar(char c);
 int			ft_strlen(const char *c);
@@ -51,4 +52,5 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+
 #endif

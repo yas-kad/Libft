@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:29:12 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:42:38 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/10/31 12:04:22 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*haystack1;
 	char	*needle1;
 	size_t	k;
-	
+
 	if (!*needle)
 		return ((char *)haystack);
 	while (*haystack && len--)

@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 13:03:54 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:55:28 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/01 11:40:40 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 size_t		ft_strlcpy(char *dst, char *src, size_t size)
 {
 	size_t	i;
-	
+
 	i = 0;
-	if (!src || size == 0)
+	if (!src)
 		return (0);
 	if (size > 0)
 	{

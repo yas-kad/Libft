@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 15:58:11 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:45:50 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/01 19:34:27 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*size_word(char const *s2, int *n, char c2)
 	while (s2[i] == c2)
 		i++;
 	start = i;
-	while (s2[i] != c2)
+	while (s2[i] != c2 && s2[i] != '\0')
 		i++;
 	end = i;
 	*n = i;
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	len = find_word(s, c);
-	if (!(dest = (char **)malloc(sizeof(char *) * len + 1)))
+	if (!(dest = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	size = 0;
 	i = 0;
