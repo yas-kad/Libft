@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:56:16 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:03:23 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:24:06 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_putendl_fd(char *s, int fd)
 	newline = '\n';
 	if (s)
 	{
-		while (s[i])
+		while (s[i] != '\0')
 		{
-			write(fd, &s[i], 1);
+			ft_putchar_fd(s[i], fd);
 			i++;
 		}
 		write(fd, &newline, 1);

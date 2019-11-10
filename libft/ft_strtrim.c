@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrimm.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 20:17:10 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/31 18:48:40 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 17:02:38 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*dest;
 
+	if (!s1)
+		return (NULL);
 	start = isspace_start(s1, set);
 	end = isspace_end(s1, set);
 	i = 0;
@@ -79,9 +81,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		while (start <= end)
 		{
-			dest[i] = s1[start];
-			i++;
-			start++;
+			dest[i++] = s1[start++];
 		}
 		dest[i] = '\0';
 	}

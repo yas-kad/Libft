@@ -6,19 +6,17 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 13:03:54 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/01 11:40:40 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:26:49 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcpy(char *dst, char *src, size_t size)
+size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	if (!src)
-		return (0);
 	if (size > 0)
 	{
 		while (src[i] != '\0' && --size)

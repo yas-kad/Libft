@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:58:35 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 20:27:20 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 17:02:12 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memmove(void *str, const void *ptr, size_t n)
 	i = 0;
 	if (!str1 && !ptr1)
 		return (NULL);
+	if (str == ptr)
+		return (str);
 	if (str1 < ptr1)
 	{
 		while (i < n)
@@ -36,6 +38,5 @@ void	*ft_memmove(void *str, const void *ptr, size_t n)
 		while (n-- > 0)
 			str1[n] = ptr1[n];
 	}
-	str = (void *)str1;
 	return (str);
 }

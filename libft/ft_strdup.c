@@ -6,13 +6,13 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 13:17:13 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 20:24:16 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/08 15:34:43 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*str;
 	int		i;

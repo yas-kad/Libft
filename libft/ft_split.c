@@ -6,11 +6,25 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 15:58:11 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/01 19:34:27 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:18:39 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**leak_f(char **ch, int j)
+{
+	int i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(ch[i]);
+		i++;
+	}
+	free(ch);
+	return (NULL);
+}
 
 int		find_word(char const *s1, char c1)
 {
@@ -51,7 +65,8 @@ char	*size_word(char const *s2, int *n, char c2)
 		i++;
 	end = i;
 	*n = i;
-	word = (char*)malloc(sizeof(char) * ((end - start) + 1));
+	if (!(word = (char*)malloc(sizeof(char) * ((end - start) + 1))))
+		return (NULL);
 	i = 0;
 	while (start < end)
 	{
@@ -80,6 +95,8 @@ char	**ft_split(char const *s, char c)
 	while (size < len)
 	{
 		dest[size] = size_word(s, &i, c);
+		if (dest[size] == NULL)
+			return (leak_f(dest, size));
 		size++;
 	}
 	dest[size] = 0;

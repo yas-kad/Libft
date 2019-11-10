@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:52:05 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/01 14:33:10 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:56:34 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ size_t		ft_strlcat(char *dest, const char *src, size_t size)
 	size_t len_dest;
 
 	k = 0;
-	i = ft_strlen(dest);
 	j = ft_strlen(src);
+	if (!dest && size == 0)
+		return (j);
+	i = ft_strlen(dest);
 	len_dest = i;
 	if (i >= size)
 		return (j + size);

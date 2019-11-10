@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 17:42:11 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 14:22:55 by yait-kad         ###   ########.fr       */
+/*   Created: 2019/11/04 14:59:38 by yait-kad          #+#    #+#             */
+/*   Updated: 2019/11/08 22:08:36 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write(fd, &c, 1);
+	t_list	*lst;
+
+	if (!(lst = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	if (content)
+		lst->content = content;
+	else
+		lst->content = NULL;
+	lst->next = NULL;
+	return (lst);
 }

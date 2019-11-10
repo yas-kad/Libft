@@ -6,7 +6,7 @@
 #    By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/20 22:53:09 by yait-kad          #+#    #+#              #
-#    Updated: 2019/10/31 18:56:38 by yait-kad         ###   ########.fr        #
+#    Updated: 2019/11/09 21:48:10 by yait-kad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,23 +18,29 @@ SOURCES = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c\
 		 ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c\
 		 ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c\
 		 ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
-		 ft_putnbr_fd.c
+		 ft_putnbr_fd.c 
+SOURCES_B = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c\
+		 ft_lstadd_back_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c
 
-OBJECT = *.o
+OBJECT = $(SOURCES:.c=.o)
+
+OBJECT_B = $(SOURCES_B:.c=.o)
 
 all : $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -c $(SOURCES) *.h
-	ar rc $(NAME) $(OBJECT)
-	ranlib $(NAME)
+$(NAME): $(OBJECT)
+	ar rcs $(NAME) $(OBJECT)
 
-bonus:
-	gcc -Wall -Wextra -Werror -c *_bonus.c
+bonus: $(OBJECT_B)
+	ar rcs $(NAME) $(OBJECT_B)
+
 clean:
-	rm -f $(OBJECT)
+	rm -rf $(OBJECT) $(OBJECT_B)
+
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c $< -o $@
 
 fclean: clean
-	rm -fr $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all

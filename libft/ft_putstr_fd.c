@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:51:28 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:59:24 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:23:52 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (s)
 	{
-		while (s[i])
+		while (s[i] != '\0')
 		{
-			write(fd, &s[i], 1);
+			ft_putchar_fd(s[i], fd);
 			i++;
 		}
 	}

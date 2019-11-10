@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:27:43 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 18:44:08 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/08 15:59:58 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *c1, int c2)
 {
-	int len;
+	int	len;
 
-	len = ft_strlen((char *)c1);
+	len = ft_strlen(c1);
 	if ((char)c2 == '\0')
 		return ((char *)c1 + len);
 	while (len >= 0)

@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 15:17:34 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/10/30 15:52:12 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:22:09 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	len = ft_len(n);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	if (n < 0)
 	{
 		n = n * (-1);
