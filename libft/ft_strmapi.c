@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 17:32:01 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 14:22:27 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/14 14:13:11 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		dest[i] = f(i, s[i]);
+		dest[i] = (*f)(i, s[i]);
 		i++;
 	}
 	dest[i] = '\0';

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 15:59:30 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/11 19:17:37 by yait-kad         ###   ########.fr       */
+/*   Created: 2019/11/14 14:18:45 by yait-kad          #+#    #+#             */
+/*   Updated: 2019/11/14 14:45:04 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int i;
+	t_list	*l;
 
-	i = 0;
-	while (lst)
+	l = (t_list*)malloc(sizeof(t_list));
+	while (l)
 	{
-		i++;
+		l = (*f)(lst->content);
 		lst = lst->next;
+		l = l->next;
+		(*del)(l->next);
 	}
-	return (i);
+	return (l);
 }

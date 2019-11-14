@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 15:58:11 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 14:18:39 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/14 14:09:13 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*size_word(char const *s2, int *n, char c2)
 	while (s2[i] == c2)
 		i++;
 	start = i;
-	while (s2[i] != c2 && s2[i] != '\0')
+	while (s2[i] != '\0' && s2[i] != c2)
 		i++;
 	end = i;
 	*n = i;
@@ -99,6 +99,6 @@ char	**ft_split(char const *s, char c)
 			return (leak_f(dest, size));
 		size++;
 	}
-	dest[size] = 0;
+	dest[size] = NULL;
 	return (dest);
 }

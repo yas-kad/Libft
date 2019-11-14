@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 21:23:20 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 14:36:30 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:16:51 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		{
 			temp = *lst;
 			del((*lst)->content);
-			free(temp);
 			*lst = (*lst)->next;
+			free(temp);
 		}
 	}
 }

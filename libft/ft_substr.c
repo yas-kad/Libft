@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:32:35 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 14:12:58 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/14 13:55:19 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			return (NULL);
 	i = start;
 	j = 0;
-	while (j < len && s[i] != '\0')
+	while (s[i] != '\0' && j < len)
 	{
 		dest[j] = s[i];
 		i++;

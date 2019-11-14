@@ -6,7 +6,7 @@
 /*   By: yait-kad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 20:17:10 by yait-kad          #+#    #+#             */
-/*   Updated: 2019/11/10 17:02:38 by yait-kad         ###   ########.fr       */
+/*   Updated: 2019/11/14 13:45:36 by yait-kad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		isspace_end(const char *c1, const char *set2)
 	{
 		j = 0;
 		compt = 0;
-		while (c1[len_c1 - 1] != set2[j] && set2[j] != '\0')
+		while (set2[j] != '\0' && c1[len_c1 - 1] != set2[j])
 		{
 			compt++;
 			j++;
@@ -50,7 +50,7 @@ int		isspace_start(const char *c, const char *set1)
 	{
 		j = 0;
 		compt = 0;
-		while (c[i] != set1[j] && set1[j] != '\0')
+		while (set1[j] != '\0' && c[i] != set1[j])
 		{
 			compt++;
 			j++;
@@ -75,10 +75,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = isspace_end(s1, set);
 	i = 0;
 	dest = NULL;
-	if (!(dest = (char*)malloc(sizeof(char) * ((end - start) + 2))))
-		return (NULL);
 	if (start >= 0)
 	{
+		if (!(dest = (char*)malloc(sizeof(char) * ((end - start) + 2))))
+			return (NULL);
 		while (start <= end)
 		{
 			dest[i++] = s1[start++];
@@ -86,6 +86,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		dest[i] = '\0';
 	}
 	else
-		dest = "";
+		return (ft_strdup("\0"));
 	return (dest);
 }
